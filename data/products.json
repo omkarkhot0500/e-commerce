@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1",
+    "name": "Wireless Bluetooth Headphones",
+    "slug": "wireless-bluetooth-headphones",
+    "description": "High-quality wireless headphones with noise cancellation and 30-hour battery life.",
+    "price": 199.9,
+    "category": "Electronics",
+    "inventory": 20,
+    "lastUpdated": "2025-10-28T18:14:39.404Z",
+    "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
+  },
+  {
+    "id": "2",
+    "name": "Organic Cotton T-Shirt",
+    "slug": "organic-cotton-t-shirt",
+    "description": "Comfortable and sustainable organic cotton t-shirt in various colors.",
+    "price": 29.99,
+    "category": "Clothing",
+    "inventory": 8,
+    "lastUpdated": "2024-01-01T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"
+  },
+  {
+    "id": "3",
+    "name": "Smart Fitness Watch",
+    "slug": "smart-fitness-watch",
+    "description": "Advanced fitness tracking with heart rate monitor and GPS capabilities.",
+    "price": 299.99,
+    "category": "Electronics",
+    "inventory": 15,
+    "lastUpdated": "2024-01-01T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+  },
+  {
+    "id": "4",
+    "name": "Leather Crossbody Bag",
+    "slug": "leather-crossbody-bag",
+    "description": "Genuine leather crossbody bag perfect for everyday use.",
+    "price": 89.99,
+    "category": "Accessories",
+    "inventory": 3,
+    "lastUpdated": "2024-01-01T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"
+  },
+  {
+    "id": "5",
+    "name": "Coffee Maker Pro",
+    "slug": "coffee-maker-pro",
+    "description": "Professional-grade coffee maker with programmable settings.",
+    "price": 149.99,
+    "category": "Home & Kitchen",
+    "inventory": 12,
+    "lastUpdated": "2024-01-01T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500"
+  },
+  {
+    "id": "6",
+    "name": "Running Shoes",
+    "slug": "running-shoes",
+    "description": "Lightweight running shoes with excellent cushioning and support.",
+    "price": 129.99,
+    "category": "Footwear",
+    "inventory": 20,
+    "lastUpdated": "2024-01-01T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"
+  },
+  {
+    "id": "7",
+    "name": "Wireless Charging Pad",
+    "slug": "wireless-charging-pad",
+    "description": "Fast wireless charging pad compatible with all Qi-enabled devices.",
+    "price": 39.99,
+    "category": "Electronics",
+    "inventory": 30,
+    "lastUpdated": "2024-01-01T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=500"
+  },
+  {
+    "id": "8",
+    "name": "Yoga Mat",
+    "slug": "yoga-mat",
+    "description": "Non-slip yoga mat with excellent grip and cushioning.",
+    "price": 49.99,
+    "category": "Sports & Fitness",
+    "inventory": 18,
+    "lastUpdated": "2024-01-01T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500"
+  }
+]
