@@ -1,4 +1,5 @@
 import { Product } from '@/lib/types';
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface ProductTableProps {
@@ -45,10 +46,12 @@ export default function ProductTable({ products }: ProductTableProps) {
                   <div className="flex items-center">
                     <div className="flex-shrink-0 h-10 w-10">
                       {product.imageUrl ? (
-                        <img
+                        <Image
                           className="h-10 w-10 rounded-full object-cover"
                           src={product.imageUrl}
                           alt={product.name}
+                          width={40}
+                          height={40}
                         />
                       ) : (
                         <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center">

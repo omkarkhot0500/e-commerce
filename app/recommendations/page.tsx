@@ -26,7 +26,7 @@ export default async function RecommendationsPage() {
           Recommended for You
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Discover products we think you'll love based on your preferences and browsing history.
+          Discover products we think you&apos;ll love based on your preferences and browsing history.
         </p>
       </div>
 
