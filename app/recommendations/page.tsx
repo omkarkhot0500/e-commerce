@@ -1,7 +1,6 @@
 import { Product } from '@/lib/types';
 import { sampleProducts } from '@/lib/data';
 import RecommendationCard from '@/components/RecommendationCard';
-import AddToWishlistButton from '@/components/AddToWishlistButton';
 
 // This page uses React Server Components (RSC) for hybrid rendering
 // Server components fetch data on the server, client components handle interactions

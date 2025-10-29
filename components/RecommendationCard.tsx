@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Product } from '@/lib/types';
-import AddToWishlistButton from './AddToWishlistButton';
 
 interface RecommendationCardProps {
   product: Product;
@@ -75,9 +74,7 @@ export default function RecommendationCard({ product }: RecommendationCardProps)
           >
             View Details
           </Link>
-          
-          {/* Client Component for interactivity */}
-          <AddToWishlistButton productId={product.id} />
+
         </div>
       </div>
     </div>

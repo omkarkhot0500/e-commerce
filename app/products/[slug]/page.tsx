@@ -144,14 +144,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
           </div>
 
-          <div className="flex space-x-4">
-            <button className="btn-primary flex-1">
-              Add to Cart
-            </button>
-            <button className="btn-secondary">
-              Add to Wishlist
-            </button>
-          </div>
+          {/* Actions removed per requirements */}
 
           <div className="pt-6 border-t border-gray-200">
             <Link

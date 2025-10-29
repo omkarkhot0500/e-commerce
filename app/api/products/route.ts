@@ -26,17 +26,7 @@ export async function GET(request: NextRequest) {
 // POST /api/products - Add new product (protected)
 export async function POST(request: NextRequest) {
   try {
-    // Check for admin API key
-    const apiKey = request.headers.get('x-api-key');
-    const adminKey = process.env.ADMIN_API_KEY;
-    
-    if (!apiKey || apiKey !== adminKey) {
-      const response: ApiResponse<never> = {
-        success: false,
-        error: 'Unauthorized - Invalid API key',
-      };
-      return NextResponse.json(response, { status: 401 });
-    }
+    // Auth disabled: allow POST in this demo deployment
 
     const body = await request.json();
     const { name, description, price, category, inventory, imageUrl } = body;

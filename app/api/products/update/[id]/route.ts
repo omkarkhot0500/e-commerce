@@ -8,17 +8,7 @@ export async function PUT(
   { params }: { params: { id: string } }
 ) {
   try {
-    // Check for admin API key
-    const apiKey = request.headers.get('x-api-key');
-    const adminKey = process.env.ADMIN_API_KEY;
-    
-    if (!apiKey || apiKey !== adminKey) {
-      const response: ApiResponse<never> = {
-        success: false,
-        error: 'Unauthorized - Invalid API key',
-      };
-      return NextResponse.json(response, { status: 401 });
-    }
+    // Auth disabled: allow PUT in this demo deployment
 
     const { id } = params;
     const body = await request.json();
