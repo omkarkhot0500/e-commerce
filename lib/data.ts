@@ -6,6 +6,14 @@ import path from 'path';
 const DATA_DIR = path.join(process.cwd(), 'data');
 const PRODUCTS_JSON_PATH = path.join(DATA_DIR, 'products.json');
 
+// In-memory cache used when running in read-only environments (e.g., Vercel)
+let inMemoryProducts: Product[] | null = null;
+
+function isReadOnlyEnvironment(): boolean {
+  // Vercel serverless/file system is read-only at runtime
+  return process.env.VERCEL === '1' || process.env.VERCEL === 'true';
+}
+
 // Sample product data used to seed JSON on first run
 export const sampleProducts: Product[] = [
   {
@@ -120,6 +128,10 @@ export function getLowStockProducts(products: Product[]): Product[] {
 
 // Ensure data directory and file exist; seed if necessary
 function ensureDataStore(): void {
+  if (isReadOnlyEnvironment()) {
+    // In read-only environments, do not attempt to create directories/files
+    return;
+  }
   if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
   }
@@ -130,14 +142,34 @@ function ensureDataStore(): void {
 
 // Read all products from JSON
 export function readAllProducts(): Product[] {
-  ensureDataStore();
-  const raw = fs.readFileSync(PRODUCTS_JSON_PATH, 'utf-8');
-  const data = JSON.parse(raw) as Product[];
-  return data;
+  // Serve from in-memory cache if available
+  if (inMemoryProducts) {
+    return inMemoryProducts;
+  }
+
+  // Attempt to read from bundled JSON file (works on Vercel read-only FS)
+  try {
+    const raw = fs.readFileSync(PRODUCTS_JSON_PATH, 'utf-8');
+    const data = JSON.parse(raw) as Product[];
+    inMemoryProducts = data;
+    return data;
+  } catch {
+    // Fallback to sample data (first run or missing file)
+    inMemoryProducts = sampleProducts;
+    return sampleProducts;
+  }
 }
 
 // Write all products to JSON
 export function writeAllProducts(products: Product[]): void {
+  // Always update in-memory cache so subsequent reads reflect changes
+  inMemoryProducts = products;
+
+  // Skip disk writes on read-only environments
+  if (isReadOnlyEnvironment()) {
+    return;
+  }
+
   ensureDataStore();
   fs.writeFileSync(PRODUCTS_JSON_PATH, JSON.stringify(products, null, 2), 'utf-8');
 }
