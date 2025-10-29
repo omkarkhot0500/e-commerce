@@ -19,10 +19,10 @@ export default function ProductForm({ product, onSubmit, onCancel }: ProductForm
     imageUrl: product?.imageUrl || '',
   });
 
-  const [errors, setErrors] = useState<Partial<ProductFormData>>({});
+  const [errors, setErrors] = useState<Partial<Record<keyof ProductFormData, string>>>({});
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<ProductFormData> = {};
+    const newErrors: Partial<Record<keyof ProductFormData, string>> = {};
 
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
